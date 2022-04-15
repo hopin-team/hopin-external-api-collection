@@ -1,0 +1,1163 @@
+{
+	"info": {
+		"_postman_id": "b30bce21-92e6-4a66-823f-0be4ff103ac3",
+		"name": "Hopin API Collection",
+		"description": "This is the collection of the Hopin External APIs, for more info about APIs, visit [https://developer.hopin.com/external-api](https://developer.hopin.com/external-apiYou)\n\nYou may need to set some variables to execute the APIs as described given below.\n\nOnce you have the ID for the Organization you will need to update the variable value for `organizationId` under the collection folder titled `Hopin API Collection`.  \nClick `Hopin API Collection` > `Variables`, update the `organizationId` with your Organization external ID and click `Save`. You can do the same to change/override any variable value.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/health",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"health"
+							]
+						},
+						"description": "Use this endpoint for checking health of API service"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "Retrieve the list of Organizations property of the user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/organizations",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the details of the Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/organizations/{{organizationId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"organizations",
+								"{{organizationId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Returns the list of the Organization's Events",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/organizations/{{organizationId}}/events",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"organizations",
+								"{{organizationId}}",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Event Details",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Duplicates an existing Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"event\",\r\n    \"attributes\": {\r\n      \"name\": \"string\",\r\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\r\n      \"timezone\": \"Abu Dhabi\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/duplications",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"duplications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creates an Event for an Organization",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"event\",\r\n    \"attributes\": {\r\n      \"analyticsCode\": \"string\",\r\n      \"attendeesVisibility\": \"show_all\",\r\n      \"color\": \"string\",\r\n      \"currency\": \"string\",\r\n      \"description\": \"string\",\r\n      \"doorsCloseAfterMinutes\": 0,\r\n      \"doorsOpenBeforeMinutes\": 0,\r\n      \"eventType\": \"hidden_event\",\r\n      \"gdprText\": \"string\",\r\n      \"hidePeopleArea\": true,\r\n      \"message\": \"string\",\r\n      \"name\": \"string\",\r\n      \"networkType\": \"everyone\",\r\n      \"password\": \"pa$$word\",\r\n      \"shortDescription\": \"string\",\r\n      \"slug\": \"string\",\r\n      \"suppressEmails\": true,\r\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\r\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\r\n      \"timerLength\": 0,\r\n      \"timezone\": \"Abu Dhabi\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/organizations/{{organizationId}}/events",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"organizations",
+								"{{organizationId}}",
+								"events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registrations",
+			"item": [
+				{
+					"name": "Retrieve the list of registrations for an Event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": {\n    \"eq\": \"string\",\n    \"in\": [\n      \"string\"\n    ]\n  },\n  \"createdAt\": {\n    \"eq\": \"2019-08-24T14:15:22Z\",\n    \"in\": [\n      \"2019-08-24T14:15:22Z\"\n    ],\n    \"gt\": \"2019-08-24T14:15:22Z\",\n    \"lt\": \"2019-08-24T14:15:22Z\",\n    \"gte\": \"2019-08-24T14:15:22Z\",\n    \"lte\": \"2019-08-24T14:15:22Z\"\n  },\n  \"refunded\": {\n    \"eq\": true\n  },\n  \"updatedAt\": {\n    \"eq\": \"2019-08-24T14:15:22Z\",\n    \"in\": [\n      \"2019-08-24T14:15:22Z\"\n    ],\n    \"gt\": \"2019-08-24T14:15:22Z\",\n    \"lt\": \"2019-08-24T14:15:22Z\",\n    \"gte\": \"2019-08-24T14:15:22Z\",\n    \"lte\": \"2019-08-24T14:15:22Z\"\n  },\n  \"userUpdatedAt\": {\n    \"eq\": \"2019-08-24T14:15:22Z\",\n    \"in\": [\n      \"2019-08-24T14:15:22Z\"\n    ],\n    \"gt\": \"2019-08-24T14:15:22Z\",\n    \"lt\": \"2019-08-24T14:15:22Z\",\n    \"gte\": \"2019-08-24T14:15:22Z\",\n    \"lte\": \"2019-08-24T14:15:22Z\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/registrations",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"registrations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Registration",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"Registration\",\r\n    \"attributes\": {\r\n      \"metadata\": {\r\n        \"property1\": \"string\",\r\n        \"property2\": \"string\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/registrations/{{registrationId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"registrations",
+								"{{registrationId}}"
+							]
+						},
+						"description": "You can only update \\`metadata\\` for Registrations"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Registration Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/registrations/{{registrationId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"registrations",
+								"{{registrationId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booths",
+			"item": [
+				{
+					"name": "Retrieve Booths for an Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/booths",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"booths"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get Reports List for an Event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/reports",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/reports/{{reportId}}/download",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"{{reportId}}",
+								"download"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Report Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/reports/{{reportId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"reports",
+								"{{reportId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Report for an Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/reports/{{reportType}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"reports",
+								"{{reportType}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "Returns the list of tags for a Booth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ProdURL}}/v1/booths/{{boothId}}/tags",
+							"host": [
+								"{{ProdURL}}"
+							],
+							"path": [
+								"v1",
+								"booths",
+								"{{boothId}}",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Returns the list of tags for a ScheduleItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/booths/{{scheduleId}}/tags",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"booths",
+								"{{scheduleId}}",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Subscription",
+			"item": [
+				{
+					"name": "Create a new data subscription for an Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"type\": \"dataSubscription\",\n    \"attributes\": {\n      \"configuration\": {\n        \"url\": \"string\",\n        \"type\": \"string\",\n        \"expiresAt\": \"2019-08-24T14:15:22Z\"\n      },\n      \"signals\": [\n        \"string\"\n      ]\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/dataSubscription",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"dataSubscription"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule Items",
+			"item": [
+				{
+					"name": "Retrieve the list of schedule items for an Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/scheduleItems",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"scheduleItems"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sessions",
+			"item": [
+				{
+					"name": "Retrieve the list of sessions for an Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/sessions",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stages",
+			"item": [
+				{
+					"name": "Retrieve Stages for an Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/stages",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"stages"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Magic Links",
+			"item": [
+				{
+					"name": "Creates Magic Link for a Ticket type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"type\": \"magicLink\",\n    \"attributes\": {\n      \"email\": \"string\",\n      \"extraFields\": {\n        \"property1\": \"string\",\n        \"property2\": \"string\"\n      },\n      \"firstName\": \"string\",\n      \"headline\": \"string\",\n      \"lastName\": \"string\",\n      \"metadata\": {\n        \"property1\": \"string\",\n        \"property2\": \"string\"\n      },\n      \"registrationId\": \"string\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/tickets/{{ticketId}}/magicLinks",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"tickets",
+								"{{ticketId}}",
+								"magicLinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes Magic Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"type\": \"magicLink\",\n    \"attributes\": {\n      \"firstName\": \"API_3\",\n      \"lastName\": \"Test_3\",\n      \"email\": \"neil.azeez+38@hopin.to\",\n      \"registrationId\": \"SFDC-1234\",\n      \"extraFields\": {\n        \"Age\": \"30\"\n      }\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/magicLinks/{{magicLinkId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"magicLinks",
+								"{{magicLinkId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Magic Links for a Ticket type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": {\n    \"eq\": \"string\",\n    \"in\": [\n      \"string\"\n    ]\n  },\n  \"updatedAt\": {\n    \"eq\": \"2019-08-24T14:15:22Z\",\n    \"in\": [\n      \"2019-08-24T14:15:22Z\"\n    ],\n    \"gt\": \"2019-08-24T14:15:22Z\",\n    \"lt\": \"2019-08-24T14:15:22Z\",\n    \"gte\": \"2019-08-24T14:15:22Z\",\n    \"lte\": \"2019-08-24T14:15:22Z\"\n  },\n  \"includeConfirmAndJoin\": {\n    \"eq\": true\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/tickets/{{ticketId}}/magicLinks",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"tickets",
+								"{{ticketId}}",
+								"magicLinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Magic Link Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"type\": \"magicLink\",\n    \"attributes\": {\n      \"firstName\": \"API_3\",\n      \"lastName\": \"Test_3\",\n      \"email\": \"neil.azeez+38@hopin.to\",\n      \"registrationId\": \"SFDC-1234\",\n      \"extraFields\": {\n        \"Age\": \"30\"\n      }\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/magicLinks/{{magicLinkId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"magicLinks",
+								"{{magicLinkId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Retrieve Ticket Types for an Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/tickets",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{{eventId}}",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Ticket Type Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/tickets/{{ticketId}}",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"tickets",
+								"{{ticketId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Templates",
+			"item": [
+				{
+					"name": "Returns the list of the organization's templates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HopinProdURL}}/v1/organizations{{organizationId}}/templates",
+							"host": [
+								"{{HopinProdURL}}"
+							],
+							"path": [
+								"v1",
+								"organizations{{organizationId}}",
+								"templates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "organizationId",
+			"value": ""
+		},
+		{
+			"key": "eventId",
+			"value": ""
+		},
+		{
+			"key": "ticketId",
+			"value": ""
+		},
+		{
+			"key": "reportType",
+			"value": ""
+		},
+		{
+			"key": "reportId",
+			"value": ""
+		},
+		{
+			"key": "bearer_token",
+			"value": ""
+		},
+		{
+			"key": "HopinProdURL",
+			"value": "https://api.hopin.com",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "HopinStagURL",
+			"value": "https://api.staging.hopin.com",
+			"type": "string"
+		},
+		{
+			"key": "HopinLocURL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "scheduleId",
+			"value": ""
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "magicLinkId",
+			"value": " "
+		},
+		{
+			"key": "registrationId",
+			"value": " "
+		}
+	]
+}
