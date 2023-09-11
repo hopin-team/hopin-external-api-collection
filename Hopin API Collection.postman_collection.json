@@ -659,7 +659,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/dataSubscription",
+							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/dataSubscriptions",
 							"host": [
 								"{{HopinProdURL}}"
 							],
@@ -667,7 +667,7 @@
 								"v1",
 								"events",
 								"{{eventId}}",
-								"dataSubscription"
+								"dataSubscriptions"
 							]
 						}
 					},
