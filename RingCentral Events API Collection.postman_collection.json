@@ -1,8 +1,8 @@
 {
 	"info": {
 		"_postman_id": "b30bce21-92e6-4a66-823f-0be4ff103ac3",
-		"name": "Hopin API Collection",
-		"description": "This is the collection of the Hopin External APIs, for more info about APIs, visit [https://developer.hopin.com/external-api](https://developer.hopin.com/external-apiYou)\n\nYou may need to set some variables to execute the APIs as described given below.\n\nOnce you have the ID for the Organization you will need to update the variable value for `organizationId` under the collection folder titled `Hopin API Collection`.  \nClick `Hopin API Collection` > `Variables`, update the `organizationId` with your Organization external ID and click `Save`. You can do the same to change/override any variable value.",
+		"name": "RingCentral Events API Collection",
+		"description": "This is the collection of the RingCentral Events External APIs, for more info about APIs, visit [https://developer.events.ringcentral.com/external-api](https://developer.events.ringcentral.com/external-api)\n\nYou may need to set some variables to execute the APIs as described given below.\n\nOnce you have the ID for the Organization you will need to update the variable value for `organizationId` under the collection folder titled `RingCentral Events API Collection`.  \nClick `RingCentral Events API Collection` > `Variables`, update the `organizationId` with your Organization external ID and click `Save`. You can do the same to change/override any variable value.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -25,9 +25,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/health",
+							"raw": "{{RingCentralEventsProdURL}}/v1/health",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -59,9 +59,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/organizations",
+							"raw": "{{RingCentralEventsProdURL}}/v1/organizations",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -87,9 +87,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/organizations/{{organizationId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/organizations/{{organizationId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -132,9 +132,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/organizations/{{organizationId}}/events",
+							"raw": "{{RingCentralEventsProdURL}}/v1/organizations/{{organizationId}}/events",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -173,9 +173,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -222,9 +222,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/duplications",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/duplications",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -272,9 +272,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/organizations/{{organizationId}}/events",
+							"raw": "{{RingCentralEventsProdURL}}/v1/organizations/{{organizationId}}/events",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -319,9 +319,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/registrations",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/registrations",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -348,9 +348,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/registrations/{{registrationId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/registrations/{{registrationId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -368,9 +368,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/registrations/{{registrationId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/registrations/{{registrationId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -413,9 +413,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/booths",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/booths",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -460,9 +460,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/reports",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/reports",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -490,9 +490,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/reports/{{reportId}}/download",
+							"raw": "{{RingCentralEventsProdURL}}/v1/reports/{{reportId}}/download",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -520,9 +520,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/reports/{{reportId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/reports/{{reportId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -549,9 +549,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/reports/{{reportType}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/reports/{{reportType}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -615,9 +615,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/booths/{{scheduleId}}/tags",
+							"raw": "{{RingCentralEventsProdURL}}/v1/booths/{{scheduleId}}/tags",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -659,9 +659,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/dataSubscriptions",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/dataSubscriptions",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -705,9 +705,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/scheduleItems",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/scheduleItems",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -751,9 +751,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/sessions",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/sessions",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -797,9 +797,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/stages",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/stages",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -841,9 +841,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/tickets/{{ticketId}}/magicLinks",
+							"raw": "{{RingCentralEventsProdURL}}/v1/tickets/{{ticketId}}/magicLinks",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -880,9 +880,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/magicLinks/{{magicLinkId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/magicLinks/{{magicLinkId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -921,9 +921,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/tickets/{{ticketId}}/magicLinks",
+							"raw": "{{RingCentralEventsProdURL}}/v1/tickets/{{ticketId}}/magicLinks",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -963,9 +963,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/magicLinks/{{magicLinkId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/magicLinks/{{magicLinkId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -997,9 +997,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/events/{{eventId}}/tickets",
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{{eventId}}/tickets",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -1027,9 +1027,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/tickets/{{ticketId}}",
+							"raw": "{{RingCentralEventsProdURL}}/v1/tickets/{{ticketId}}",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -1061,9 +1061,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HopinProdURL}}/v1/organizations{{organizationId}}/templates",
+							"raw": "{{RingCentralEventsProdURL}}/v1/organizations{{organizationId}}/templates",
 							"host": [
-								"{{HopinProdURL}}"
+								"{{RingCentralEventsProdURL}}"
 							],
 							"path": [
 								"v1",
@@ -1123,23 +1123,8 @@
 			"value": ""
 		},
 		{
-			"key": "HopinProdURL",
-			"value": "https://api.hopin.com",
-			"type": "string"
-		},
-		{
-			"value": "",
-			"type": "string",
-			"disabled": true
-		},
-		{
-			"key": "HopinStagURL",
-			"value": "https://api.staging.hopin.com",
-			"type": "string"
-		},
-		{
-			"key": "HopinLocURL",
-			"value": "http://localhost:3000",
+			"key": "RingCentralEventsProdURL",
+			"value": "https://api.events.ringcentral.com",
 			"type": "string"
 		},
 		{
