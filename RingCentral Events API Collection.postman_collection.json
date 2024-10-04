@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "b30bce21-92e6-4a66-823f-0be4ff103ac3",
+		"_postman_id": "8f819d77-c21a-4da3-bbaf-6a40d03cbc48",
 		"name": "RingCentral Events API Collection",
 		"description": "This is the collection of the RingCentral Events External APIs, for more info about APIs, visit [https://developer.events.ringcentral.com/external-api](https://developer.events.ringcentral.com/external-api)\n\nYou may need to set some variables to execute the APIs as described given below.\n\nOnce you have the ID for the Organization you will need to update the variable value for `organizationId` under the collection folder titled `RingCentral Events API Collection`.  \nClick `RingCentral Events API Collection` > `Variables`, update the `organizationId` with your Organization external ID and click `Save`. You can do the same to change/override any variable value.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29403968"
 	},
 	"item": [
 		{
@@ -334,13 +335,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Registration",
+					"name": "Update registration",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"Registration\",\r\n    \"attributes\": {\r\n      \"metadata\": {\r\n        \"property1\": \"string\",\r\n        \"property2\": \"string\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"registration\",\r\n    \"attributes\": {\r\n      \"answers\": [\r\n        {\r\n          \"questionId\": \"string\",\r\n          \"answer\": \"string\"\r\n        }\r\n      ],\r\n      \"externalBarcode\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"headline\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"ticketId\": \"string\"\r\n    }\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,7 +364,7 @@
 					"response": []
 				},
 				{
-					"name": "Retrieve Registration Details",
+					"name": "Retrieve registration details",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -378,6 +379,36 @@
 								"{{registrationId}}"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a registration for event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"registration\",\r\n    \"attributes\": {\r\n      \"answers\": [\r\n        {\r\n          \"questionId\": \"string\",\r\n          \"answer\": \"string\"\r\n        }\r\n      ],\r\n      \"email\": \"string\",\r\n      \"externalBarcode\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"ticketId\": \"string\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RingCentralEventsProdURL}}/v1/events/{eventId}/registrations",
+							"host": [
+								"{{RingCentralEventsProdURL}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"{eventId}",
+								"registrations"
+							]
+						},
+						"description": "You can only update \\`metadata\\` for Registrations"
 					},
 					"response": []
 				}
@@ -1073,6 +1104,57 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Creates an event from template",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"event\",\r\n    \"attributes\": {\r\n      \"auto_publish\": true,\r\n      \"metadata\": {},\r\n      \"name\": \"string\",\r\n      \"organizationId\": \"string\",\r\n      \"password\": \"string\",\r\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\r\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\r\n      \"timezone\": \"Abu Dhabi\",\r\n      \"type\": \"hidden_event\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RingCentralEventsProdURL}}/v1/templates/{{templateID}}/event",
+							"host": [
+								"{{RingCentralEventsProdURL}}"
+							],
+							"path": [
+								"v1",
+								"templates",
+								"{{templateID}}",
+								"event"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -1132,9 +1214,9 @@
 			"value": ""
 		},
 		{
+			"key": "templateID",
 			"value": "",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		},
 		{
 			"key": "magicLinkId",
