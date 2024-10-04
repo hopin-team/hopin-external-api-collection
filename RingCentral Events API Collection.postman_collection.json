@@ -104,6 +104,41 @@
 			]
 		},
 		{
+			"name": "Bank Questions",
+			"item": [
+				{
+					"name": "Returns the list of bank questions for given ticket type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{RingCentralEventsProdURL}}/v1/tickets/{{ticketId}}/bankQuestions",
+							"host": [
+								"{{RingCentralEventsProdURL}}"
+							],
+							"path": [
+								"v1",
+								"tickets",
+								"{{ticketId}}",
+								"bankQuestions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Events",
 			"item": [
 				{
