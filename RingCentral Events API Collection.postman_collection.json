@@ -424,7 +424,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"registration\",\r\n    \"attributes\": {\r\n      \"answers\": [\r\n        {\r\n          \"questionId\": \"string\",\r\n          \"answer\": \"string\"\r\n        }\r\n      ],\r\n      \"email\": \"string\",\r\n      \"externalBarcode\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"ticketId\": \"string\"\r\n    }\r\n  }\r\n}",
+							"raw": "{\r\n  \"data\": {\r\n    \"type\": \"registration\",\r\n    \"attributes\": {\r\n      \"answers\": [\r\n        {\r\n          \"questionId\": \"string\",\r\n          \"answer\": \"string\"\r\n        }\r\n      ],\r\n      \"email\": \"string\",\r\n      \"externalBarcode\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"metadata\": { },\r\n      \"ticketId\": \"string\"\r\n    }\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
